@@ -1,0 +1,178 @@
+@import "vars";
+* {	margin:0;
+	padding:0;
+	font-family: "Arial", sans-seriaf; 
+}
+html { font-size: 16px; }
+.wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.main {
+	width: 75%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+caption {
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 600;
+	text-align: center;
+}
+.quantity {
+	width: 30%;
+	height: 30%;
+}
+table {
+	width: 100%;
+	margin: 20px 0;
+	border-collapse: collapse;
+	text-align: center;
+    color: @dark;
+}
+.name, .type, .avatar { width: 10%; }
+td, th {
+  	background: @blue;
+	color:@dark;
+	padding: 5px 10px;
+}
+th, td {
+	border-style: solid;
+	border-width: 0 1px 1px 0;
+	border-color: white;
+}
+td { background: @light; }
+
+select{
+	width: 50px;
+	height: 30px;
+	margin-left: 5%;
+	font-size: 14px;
+	border-radius: 5px;
+	outline: none;
+	outline-offset: 0;
+	cursor: pointer;
+}
+.pop-img{
+	width: 20%;
+	height: 20%;
+}
+.arrows{
+	width: 12%;
+	margin-top: 2%;
+	display: inline-flex;
+	justify-content: space-between;
+
+	@media all and (max-width: 992px) and (min-width: 768px) {
+		width: 15%;
+	}
+}
+.arrow {
+	width: 35px;
+	height: 35px;
+	.row-center;
+	align-items: center;
+	font-size: 25px;
+	font-weight: 600;
+	background: none;
+	border-radius: 5px;
+	border: 1px solid @dark;
+
+	&:hover {
+        cursor: pointer;
+		background: rgba(0,0,0, 0.1);
+    }
+}
+i{
+	border: solid @dark;
+  	border-width: 0 3px 3px 0;
+  	display: inline-block;
+  	padding: 3px;
+}
+.arrow-left{
+	transform: rotate(135deg);
+}
+.arrow-right{
+  	transform: rotate(-45deg);
+}
+
+@media all and (max-width: 768px) and (min-width: 576px){
+	html { 
+		font-size: 14px;
+	}
+	.main { 
+		width: 85%; 
+	}
+	.arrows{ 
+		width: 19%; 
+	}
+	caption { 
+		font-size: 20px;
+	}
+	.quantity {
+		width: 40%;
+	}
+	table thead{
+		display: none;
+	}
+	table tr {
+		display: block;
+	}
+	table td {
+		display: flex;
+		justify-content: space-between;
+		font-size: 14px;
+		text-align: right;
+	}
+	table td:before{
+		content: attr(data-label);
+    	font-weight: bold;
+    	margin-right: 20px;
+    	text-align: start;
+	}
+}
+@media all and (max-width: 576px) and (min-width: 320px){
+	.arrows{
+		width: 26%; 
+	}
+	html { 
+		font-size: 14px; 
+	}
+	.main { 
+		width: 95%; 
+	}
+	.quantity { 
+		width: 45%; 
+	}
+	table thead{
+		display: none;
+		text-align: start;
+	}
+	table tr { 
+		display: block; 
+	}
+	table td {
+		display: flex;
+		justify-content: space-between;
+		font-size: 14px;
+		text-align: right;
+	}
+	table td:before{
+		content: attr(data-label);
+    	font-weight: bold;
+    	margin-right: 20px;
+    	text-align: start;
+	}
+	caption { 
+		font-size: 16px; 
+	}
+	.pop-img{
+		width: 10%;
+		height: 10%;
+	}
+}
